@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Planner - Esprit2Peer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="file.css">
+</head>
+<body class="bg-beige font-sans text-gray-900">
+  <!-- Navbar -->
+<header class="flex justify-between items-center px-4 sm:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-12 mt-4 shadow-md">
+  <img src="public/logo.png" class="h-12" alt="Logo">
+
+<nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
+  <a href="#" class="hover:text-orange-400">Home</a>
+  <a href="#" class="hover:text-orange-400">Planner</a>
+  <a href="#" class="hover:text-orange-400">Match Making</a>
+  <a href="#" class="hover:text-orange-400">Focus</a>
+  <a href="#" class="hover:text-orange-400">Analytics</a>
+  <a href="#" class="hover:text-orange-400">Forum</a>
+</nav>
+
+<div class="flex items-center gap-4">
+    <button class="relative">
+     <img src="public/notification.png" class="h-6"></button>
+         <button class="relative">
+     <img src="public/parametres.png" class="h-6"></button>
+
+  <img src="public/user.png" class="h-12 w-14 rounded-full" alt="User">
+</div>
+</header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-10">
+    <!-- Weekly Planner Main -->
+    <section class="bg-white rounded-xl p-4 sm:p-8 shadow-md mb-8">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+        <h2 class="text-xl sm:text-2xl font-semibold text-dark-teal select-none">Weekly Planner</h2>
+        <button class="bg-accent text-light px-4 py-2 rounded-full font-semibold hover:bg-accent/90 w-full sm:w-auto">+ Add Event</button>
+      </div>
+      <div class="overflow-x-auto">
+        <div class="grid grid-cols-7 min-w-max gap-2 sm:gap-4 text-center font-semibold text-xs sm:text-sm select-none">
+          <div>MON <span class="block mt-1 text-base sm:text-lg font-bold text-dark-teal">12</span></div>
+          <div>TUE <span class="block mt-1 text-base sm:text-lg font-bold text-dark-teal">13</span></div>
+          <div>WED <span class="block mt-1 text-base sm:text-lg font-bold text-white bg-teal-light rounded-md py-1 px-2 sm:px-3 inline-block">14</span></div>
+          <div>THU <span class="block mt-1 text-base sm:text-lg font-bold text-dark-teal">15</span></div>
+          <div>FRI <span class="block mt-1 text-base sm:text-lg font-bold text-dark-teal">16</span></div>
+          <div>SAT <span class="block mt-1 text-base sm:text-lg font-bold text-dark-teal">17</span></div>
+          <div>SUN</div>
+        </div>
+      </div>
+      <div class="mt-4 sm:mt-6 overflow-x-auto relative border-l border-gray-200">
+        <!-- Time labels -->
+        <div class="col-span-1 border-r border-gray-200 pr-1 text-xs text-gray-400 select-none sticky left-0 bg-white z-10">
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">08:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">09:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">10:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">11:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">12:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">13:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">14:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">15:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">16:00</div>
+          <div class="h-12 border-b border-gray-100 flex items-center justify-end pr-2">17:00</div>
+        </div>
+        <!-- Days columns -->
+        <div class="grid grid-cols-6 min-w-max gap-x-1 sm:gap-x-2 relative border-r border-gray-200">
+          <!-- Monday -->
+          <div class="relative border-r border-gray-200 min-w-[120px]">
+            <div class="absolute left-1 sm:left-2 top-[48px] w-full max-w-[100px] sm:max-w-[120px] bg-red-light rounded-md p-1 sm:p-2 text-xs font-semibold text-red-dark shadow-md">
+              <div class="truncate">Study Session</div>
+              <div class="text-[8px] sm:text-[10px] font-normal">09:00 - 10:30</div>
+            </div>
+            <div class="absolute left-1 sm:left-2 top-[72px] w-full max-w-[100px] sm:max-w-[120px] bg-red rounded-md p-1 sm:p-2 text-xs font-semibold text-white shadow-md">
+              <div class="truncate">Group Project</div>
+              <div class="text-[8px] sm:text-[10px] font-normal">09:00 - 10:30</div>
+            </div>
+          </div>
+          <!-- Tuesday -->
+          <div class="relative border-r border-gray-200 min-w-[120px]">
+            <div class="absolute left-1 sm:left-2 top-[120px] w-full max-w-[100px] sm:max-w-[120px] bg-red-light rounded-md p-1 sm:p-2 text-xs font-semibold text-red-dark shadow-md">
+              <div class="truncate">Team Meeting</div>
+              <div class="text-[8px] sm:text-[10px] font-normal">14:00 - 15:30</div>
+            </div>
+          </div>
+          <!-- Wednesday highlight background -->
+          <div class="relative border-r border-gray-200 min-w-[120px] bg-teal-light/50">
+            <div class="absolute left-1 sm:left-2 top-[96px] w-full max-w-[100px] sm:max-w-[120px] bg-blue-light rounded-md p-1 sm:p-2 text-xs font-semibold text-blue-dark shadow-md">
+              <div class="truncate">Group Project</div>
+              <div class="text-[8px] sm:text-[10px] font-normal">10:00 - 11:30</div>
+            </div>
+          </div>
+          <!-- Thursday -->
+          <div class="relative border-r border-gray-200 min-w-[120px]">
+            <div class="absolute left-1 sm:left-2 top-[216px] w-full max-w-[100px] sm:max-w-[120px] bg-blue-light rounded-md p-1 sm:p-2 text-xs font-semibold text-blue-dark shadow-md">
+              <div class="truncate">Study Session</div>
+              <div class="text-[8px] sm:text-[10px] font-normal">14:30 - 17:00</div>
+            </div>
+          </div>
+          <!-- Friday -->
+          <div class="relative border-r border-gray-200 min-w-[120px]">
+            <div class="absolute left-1 sm:left-2 top-[132px] w-full max-w-[100px] sm:max-w-[120px] border border-dark-teal rounded-md p-1 sm:p-2 text-xs font-semibold text-dark-teal shadow-md">
+              <div class="truncate">Lecture</div>
+              <div class="text-[8px] sm:text-[10px] font-normal">11:00 - 12:00</div>
+            </div>
+          </div>
+          <!-- Saturday -->
+          <div class="relative min-w-[120px]">
+            <!-- No events -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- Footer -->
+  <footer class="px-4 sm:px-10 py-10 bg-footer text-light">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+
+      <div class="text-center sm:text-left">
+        <img src="public/logo1.png" class="h-16 mb-4 mx-auto sm:mx-0" alt="Logo">
+        <p class="max-w-xs text-gray-300 mb-4" >
+          Connecting students worldwide to learn and grow together.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-light">Quick Links</h3>
+        <ul class="space-y-1 text-gray-300">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>How It Works</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-light">Resources</h3>
+        <ul class="space-y-1 text-gray-300" >
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+
+      <div class="text-center sm:text-left">
+        <h3 class="text-xl font-semibold mb-2 text-light">Get in Touch</h3>
+        <p class="text-gray-300 mb-3">hello@esprit2peer.com</p>
+
+        <div class="flex gap-4 justify-center sm:justify-start">
+          <img src="public/facebook.png" class="h-6">
+          <img src="public/instagram.png" class="h-6">
+          <img src="public/twitter.png" class="h-6">
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-gray-400 mt-10 text-light">
+      © 2025 Esprit2Peer. All Rights Reserved.
+    </p>
+  </footer>
+</body>
+</html>

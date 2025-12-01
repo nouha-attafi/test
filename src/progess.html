@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Esprit2Peer — Analytics / Planner</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="file.css">
+</head>
+<body class="bg-primary font-sans text-darkgreen">
+
+  <header class="flex justify-between items-center px-4 sm:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-12 mt-4 shadow-md">
+    <img src="public/logo.png" class="h-12" alt="Logo">
+
+    <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
+      <a href="#" class="hover:text-orange-400">Home</a>
+      <a href="#" class="hover:text-orange-400">Planner</a>
+      <a href="#" class="hover:text-orange-400">Match Making</a>
+      <a href="#" class="hover:text-orange-400">Focus</a>
+      <a href="#" class="hover:text-orange-400">Analytics</a>
+      <a href="#" class="hover:text-orange-400">Forum</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button class="relative">
+        <img src="public/notification.png" class="h-6"></button>
+      <button class="relative">
+        <img src="public/parametres.png" class="h-6"></button>
+
+      <img src="public/user.png" class="h-12 w-14 rounded-full" alt="User">
+    </div>
+  </header>
+
+  <!-- PAGE -->
+  <main class="page" role="main">
+
+    <!-- Analytics Section -->
+    <section class="card">
+      <h1>Weekly Attendance Overview</h1>
+      <p class="sub">Your attendance breakdown for this week</p>
+
+      <div class="analytics-grid">
+        <!-- left -->
+        <div class="left-col">
+          <div class="pie-card">
+            <div class="pie" role="img" aria-label="attendance pie chart"></div>
+            <div class="legend" aria-hidden="true">
+              <span><i class="dot present"></i> Present</span>
+              <span><i class="dot absent"></i> Absent</span>
+              <span><i class="dot pending"></i> Pending</span>
+            </div>
+          </div>
+
+          <div class="card summary-card">
+            <h3 class="summary-title">Summary</h3>
+            <p class="summary-text">You're doing great this week. Stay consistent and reach your goals!</p>
+            <div class="summary-button">
+              <a href="#" class="view-details-btn">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div>
+          <div class="hero">
+            <div class="msg">
+              <h2 class="hero-title">Keep it up!</h2>
+              <p class="hero-subtitle">You're doing great this week. Stay consistent and reach your goals!</p>
+            </div>
+            <div class="hero-illustration">
+              <img src="public/progrss.png" alt="illustration" class="illustration-img">
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat pending-stat">
+              <div class="stat-header">
+                <div class="stat-icon pending-icon"></div>
+                <h3 class="stat-label">Pending</h3>
+              </div>
+              <div class="stat-percent">10%</div>
+              <div class="stat-description">Days attended this week</div>
+              <div class="progress-bar">
+                <div class="progress-fill pending-fill"></div>
+              </div>
+            </div>
+
+            <div class="stat present-stat">
+              <div class="stat-header">
+                <div class="stat-icon present-icon"></div>
+                <h3 class="stat-label">Present</h3>
+              </div>
+              <div class="stat-percent present-percent">85%</div>
+              <div class="stat-description">Days missed this week</div>
+              <div class="progress-bar">
+                <div class="progress-fill present-fill"></div>
+              </div>
+            </div>
+
+            <div class="stat red absent-stat">
+              <div class="stat-header">
+                <div class="stat-icon absent-icon"></div>
+                <h3 class="stat-label">Absent</h3>
+              </div>
+              <div class="stat-percent">5%</div>
+              <div class="stat-description absent-description">Awaiting confirmation</div>
+              <div class="progress-bar absent-bar">
+                <div class="progress-fill absent-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="performance">
+            <div class="txt">
+              <h3 class="performance-title">Excellent Performance!</h3>
+              <p class="performance-text">Your team's attendance rate has improved by 12% compared to last week. Keep maintaining this momentum for better productivity.</p>
+            </div>
+            <div class="performance-buttons">
+              <a href="#" class="performance-btn report-btn">View Detailed Report</a>
+              <a href="#" class="performance-btn share-btn">Share Results</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="px-4 sm:px-10 py-10 bg-footer text-light">
+    <div class="flex flex-col md:flex-row justify-between">
+
+      <div>
+        <img src="public/logo1.png" class="h-16 mt-4" alt="Logo">
+        <p class="max-w-xs text-gray-300 mb-4" >
+          Connecting students worldwide to learn and grow together.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-light">Quick Links</h3>
+        <ul class="space-y-1 text-gray-300">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>How It Works</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-light">Resources</h3>
+        <ul class="space-y-1 text-gray-300" >
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-light">Get in Touch</h3>
+        <p class="text-gray-300 mb-3">hello@esprit2peer.com</p>
+
+        <div class="flex gap-4">
+          <img src="public/facebook.png" class="h-6">
+          <img src="public/instagram.png" class="h-6">
+          <img src="public/twitter.png" class="h-6">
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-gray-400 mt-10 text-light">
+      © 2025 Esprit2Peer. All Rights Reserved.
+    </p>
+  </footer>
+
+</body>
+</html>

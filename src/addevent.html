@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Esprit2Peer - Create New Event</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="file.css">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-beige font-sans text-black" x-data="{ 
+    eventType: 'academic', 
+    recurrence: 'none',
+    collaborators: [''],
+    addCollaborator() {
+        this.collaborators.push('');
+    },
+    removeCollaborator(index) {
+        this.collaborators.splice(index, 1);
+    }
+}">
+  <!-- Navbar -->
+<header class="flex justify-between items-center px-4 sm:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-12 mt-4 shadow-md">
+  <img src="public/logo.png" class="h-12" alt="Logo">
+
+<nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
+  <a href="#" class="hover:text-orange-400">Home</a>
+  <a href="#" class="hover:text-orange-400">Planner</a>
+  <a href="#" class="hover:text-orange-400">Match Making</a>
+  <a href="#" class="hover:text-orange-400">Focus</a>
+  <a href="#" class="hover:text-orange-400">Analytics</a>
+  <a href="#" class="hover:text-orange-400">Forum</a>
+</nav>
+
+<div class="flex items-center gap-4">
+    <button class="relative">
+     <img src="public/notification.png" class="h-6"></button>
+         <button class="relative">
+     <img src="public/parametres.png" class="h-6"></button>
+
+  <img src="public/user.png" class="h-12 w-14 rounded-full" alt="User">
+</div>
+</header>
+
+    <!-- Event Creation Form -->
+    <main class="container mx-auto px-4 sm:px-6 py-4 sm:py-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-4 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-black mb-6 text-center">Create New Event</h2>
+            
+            <form class="space-y-6">
+                <!-- Title and Description -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-black font-semibold mb-2">Event Title</label>
+                        <input type="text" 
+                               placeholder="Enter event title..." 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-black font-semibold mb-2">Event Type</label>
+                        <select 
+                            x-model="eventType"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                            <option value="academic">Academic</option>
+                            <option value="personal">Personal</option>
+                            <option value="group">Group Work</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block text-black font-semibold mb-2">Description</label>
+                    <textarea 
+                        placeholder="Event details..."
+                        rows="4"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                </div>
+
+                <!-- Date and Time -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-black font-semibold mb-2">Start Date</label>
+                        <input type="date" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-black font-semibold mb-2">Start Time</label>
+                        <input type="time" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-black font-semibold mb-2">Duration</label>
+                        <input type="number" 
+                               placeholder="Duration in minutes"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                </div>
+
+                <!-- Recurrence -->
+                <div>
+                    <label class="block text-black font-semibold mb-2">Recurrence</label>
+                    <select 
+                        x-model="recurrence"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <option value="none">No recurrence</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Collaborators -->
+                <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
+                        <label class="block text-black font-semibold">Collaborators</label>
+                        <button 
+                            type="button" 
+                            @click="addCollaborator()"
+                            class="bg-secondary text-white px-3 py-1 rounded-full text-sm hover:bg-opacity-90 transition">
+                            + Add Collaborator
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <template x-for="(collaborator, index) in collaborators" :key="index">
+                            <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full">
+                                <input 
+                                    type="email" 
+                                    placeholder="Collaborator's email"
+                                    class="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <button 
+                                    type="button"
+                                    @click="removeCollaborator(index)"
+                                    class="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition w-full sm:w-auto">
+                                    Remove
+                                </button>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Additional Options -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-black font-semibold mb-2">Location</label>
+                        <input type="text" 
+                               placeholder="Event location"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-black font-semibold mb-2">Meeting Link</label>
+                        <input type="url" 
+                               placeholder="Video conference link"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-between items-center mt-8 gap-4">
+                    <button 
+                        type="reset" 
+                        class="bg-gray-200 text-black px-6 py-2 rounded-full hover:bg-gray-300 transition w-full sm:w-auto">
+                        Cancel
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="bg-secondary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition w-full sm:w-auto">
+                        Create Event
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- Footer -->
+  <footer class="px-4 sm:px-10 py-10 bg-footer text-light">
+    <div class="flex flex-col md:flex-row justify-between gap-6">
+
+      <div class="text-center sm:text-left">
+        <img src="public/logo1.png" class="h-16 mb-4 mx-auto sm:mx-0" alt="Logo">
+        <p class="max-w-xs text-gray-300 mb-4" >
+          Connecting students worldwide to learn and grow together.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-light">Quick Links</h3>
+        <ul class="space-y-1 text-gray-300">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>How It Works</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-light">Resources</h3>
+        <ul class="space-y-1 text-gray-300" >
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+
+      <div class="text-center sm:text-left">
+        <h3 class="text-xl font-semibold mb-2 text-light">Get in Touch</h3>
+        <p class="text-gray-300 mb-3">hello@esprit2peer.com</p>
+
+        <div class="flex gap-4 justify-center sm:justify-start">
+          <img src="public/facebook.png" class="h-6">
+          <img src="public/instagram.png" class="h-6">
+          <img src="public/twitter.png" class="h-6">
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-gray-400 mt-10 text-light">
+      © 2025 Esprit2Peer. All Rights Reserved.
+    </p>
+  </footer>
+</body>
+</html>
