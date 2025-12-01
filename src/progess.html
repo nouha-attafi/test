@@ -4,180 +4,195 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Esprit2Peer — Analytics / Planner</title>
-
-  <!-- Fonts -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="file.css">
 </head>
-<body class="bg-primary font-sans text-darkgreen">
-
-  <header class="flex justify-between items-center px-4 sm:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-12 mt-4 shadow-md">
-    <img src="public/logo.png" class="h-12" alt="Logo">
-
-    <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
-      <a href="#" class="hover:text-orange-400">Home</a>
-      <a href="#" class="hover:text-orange-400">Planner</a>
-      <a href="#" class="hover:text-orange-400">Match Making</a>
-      <a href="#" class="hover:text-orange-400">Focus</a>
-      <a href="#" class="hover:text-orange-400">Analytics</a>
-      <a href="#" class="hover:text-orange-400">Forum</a>
+<body class="bg-primary font-sans text-dark-green">
+  <!-- Header -->
+  <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-14 mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
+    <img src="public/logo.png" class="h-10 sm:h-12" alt="Logo">
+    <nav class="hidden lg:flex gap-6 xl:gap-8 text-white text-lg font-normal">
+      <a href="#" class="hover:text-orange-400 transition-colors">Home</a>
+      <a href="#" class="hover:text-orange-400 transition-colors">Planner</a>
+      <a href="#" class="text-orange-400">Match Making</a>
+      <a href="#" class="hover:text-orange-400 transition-colors">Focus</a>
+      <a href="#" class="hover:text-orange-400 transition-colors">Analytics</a>
+      <a href="#" class="hover:text-orange-400 transition-colors">Forum</a>
     </nav>
-
-    <div class="flex items-center gap-4">
-      <button class="relative">
-        <img src="public/notification.png" class="h-6"></button>
-      <button class="relative">
-        <img src="public/parametres.png" class="h-6"></button>
-
-      <img src="public/user.png" class="h-12 w-14 rounded-full" alt="User">
+    <div class="flex items-center gap-3 sm:gap-5">
+      <button class="text-white hover:text-orange-300 transition-colors hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">notifications</span>
+      </button>
+      <button class="text-white hover:text-orange-300 transition-colors hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">settings</span>
+      </button>
+      <img src="public/f2.png" alt="User Avatar" class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover">
+      <button id="mobile-menu-button" class="lg:hidden text-white">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
     </div>
   </header>
 
-  <!-- PAGE -->
-  <main class="page" role="main">
-
+  <!-- Page Content -->
+  <main class="max-w-6xl mx-auto px-4 my-8 md:my-18">
     <!-- Analytics Section -->
-    <section class="card">
-      <h1>Weekly Attendance Overview</h1>
-      <p class="sub">Your attendance breakdown for this week</p>
+    <section class="bg-white rounded-14 shadow-lg p-6 md:p-8 mb-20">
+      <h1 class="font-heading text-2xl md:text-3xl font-bold text-deep mb-2">Weekly Attendance Overview</h1>
+      <p class="text-muted mb-6 md:mb-8">Your attendance breakdown for this week</p>
 
-      <div class="analytics-grid">
-        <!-- left -->
-        <div class="left-col">
-          <div class="pie-card">
-            <div class="pie" role="img" aria-label="attendance pie chart"></div>
-            <div class="legend" aria-hidden="true">
-              <span><i class="dot present"></i> Present</span>
-              <span><i class="dot absent"></i> Absent</span>
-              <span><i class="dot pending"></i> Pending</span>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Left Column -->
+        <div class="lg:col-span-1 space-y-6">
+          <!-- Pie Chart Card -->
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
+            <div class="w-40 h-40 mx-auto rounded-full conic-gradient-pie shadow-inner"></div>
+            <div class="flex flex-wrap justify-center gap-4 mt-4">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-[#1fb88f]"></div>
+                <span class="text-sm text-muted">Present</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-[#ffad9d]"></div>
+                <span class="text-sm text-muted">Absent</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-[#7fd3cc]"></div>
+                <span class="text-sm text-muted">Pending</span>
+              </div>
             </div>
           </div>
 
-          <div class="card summary-card">
-            <h3 class="summary-title">Summary</h3>
-            <p class="summary-text">You're doing great this week. Stay consistent and reach your goals!</p>
-            <div class="summary-button">
-              <a href="#" class="view-details-btn">View Details</a>
-            </div>
+          <!-- Summary Card -->
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
+            <h3 class="font-heading text-lg font-semibold text-deep mb-3">Summary</h3>
+            <p class="text-muted text-sm mb-4">You're doing great this week. Stay consistent and reach your goals!</p>
+            <a href="#" class="inline-block bg-peach text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+              View Details
+            </a>
           </div>
         </div>
 
-        <!-- right -->
-        <div>
-          <div class="hero">
-            <div class="msg">
-              <h2 class="hero-title">Keep it up!</h2>
-              <p class="hero-subtitle">You're doing great this week. Stay consistent and reach your goals!</p>
+        <!-- Right Column -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Hero Section -->
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex-1">
+              <h2 class="font-heading text-xl md:text-2xl font-bold text-peach mb-2">Keep it up!</h2>
+              <p class="text-muted">You're doing great this week. Stay consistent and reach your goals!</p>
             </div>
-            <div class="hero-illustration">
-              <img src="public/progrss.png" alt="illustration" class="illustration-img">
-            </div>
-          </div>
-
-          <div class="stats">
-            <div class="stat pending-stat">
-              <div class="stat-header">
-                <div class="stat-icon pending-icon"></div>
-                <h3 class="stat-label">Pending</h3>
-              </div>
-              <div class="stat-percent">10%</div>
-              <div class="stat-description">Days attended this week</div>
-              <div class="progress-bar">
-                <div class="progress-fill pending-fill"></div>
-              </div>
-            </div>
-
-            <div class="stat present-stat">
-              <div class="stat-header">
-                <div class="stat-icon present-icon"></div>
-                <h3 class="stat-label">Present</h3>
-              </div>
-              <div class="stat-percent present-percent">85%</div>
-              <div class="stat-description">Days missed this week</div>
-              <div class="progress-bar">
-                <div class="progress-fill present-fill"></div>
-              </div>
-            </div>
-
-            <div class="stat red absent-stat">
-              <div class="stat-header">
-                <div class="stat-icon absent-icon"></div>
-                <h3 class="stat-label">Absent</h3>
-              </div>
-              <div class="stat-percent">5%</div>
-              <div class="stat-description absent-description">Awaiting confirmation</div>
-              <div class="progress-bar absent-bar">
-                <div class="progress-fill absent-fill"></div>
-              </div>
+            <div class="w-32 h-32 rounded-lg bg-gradient-to-b from-[#de533a] to-white flex items-center justify-center flex-shrink-0">
+              <img src="public/progrss.png" alt="Progress illustration" class="w-24 h-24 object-contain">
             </div>
           </div>
 
-          <div class="performance">
-            <div class="txt">
-              <h3 class="performance-title">Excellent Performance!</h3>
-              <p class="performance-text">Your team's attendance rate has improved by 12% compared to last week. Keep maintaining this momentum for better productivity.</p>
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Pending Stat -->
+            <div class="bg-gradient-to-b from-mint-1 to-[#eaf9f0] rounded-lg p-5 shadow-sm relative">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-lg bg-[rgba(127,211,204,0.2)]"></div>
+                <h3 class="font-semibold text-deep text-sm">Pending</h3>
+              </div>
+              <div class="text-2xl font-bold text-[#0a6b5b] absolute top-4 right-4">10%</div>
+              <p class="text-muted text-xs mt-8">Days attended this week</p>
+              <div class="h-2 bg-[#e9f7f1] rounded-full mt-2 overflow-hidden">
+                <div class="h-full w-1/10 bg-gradient-pending rounded-full"></div>
+              </div>
             </div>
-            <div class="performance-buttons">
-              <a href="#" class="performance-btn report-btn">View Detailed Report</a>
-              <a href="#" class="performance-btn share-btn">Share Results</a>
+
+            <!-- Present Stat -->
+            <div class="bg-gradient-to-b from-mint-1 to-[#eaf9f0] rounded-lg p-5 shadow-sm relative">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-lg bg-[rgba(31,184,143,0.2)]"></div>
+                <h3 class="font-semibold text-deep text-sm">Present</h3>
+              </div>
+              <div class="text-2xl font-bold text-[#0f7f61] absolute top-4 right-4">85%</div>
+              <p class="text-muted text-xs mt-8">Days missed this week</p>
+              <div class="h-2 bg-[#e9f7f1] rounded-full mt-2 overflow-hidden">
+                <div class="h-full w-85/100 bg-gradient-present rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- Absent Stat -->
+            <div class="bg-gradient-to-b from-[#ffeaea] to-[#ffd6d2] rounded-lg p-5 shadow-sm relative">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-lg bg-[rgba(255,173,157,0.2)]"></div>
+                <h3 class="font-semibold text-deep text-sm">Absent</h3>
+              </div>
+              <div class="text-2xl font-bold text-[#d94b41] absolute top-4 right-4">5%</div>
+              <p class="text-[#b64b42] text-xs mt-8">Awaiting confirmation</p>
+              <div class="h-2 bg-white/70 rounded-full mt-2 overflow-hidden">
+                <div class="h-full w-5/100 bg-gradient-absent rounded-full"></div>
+              </div>
             </div>
           </div>
 
+          <!-- Performance Banner -->
+          <div class="bg-gradient-to-r from-[#00b67c] via-[#0da77a] to-[#0fa37a] rounded-lg p-6 text-white">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div class="flex-1">
+                <h3 class="font-heading text-xl font-bold mb-2">Excellent Performance!</h3>
+                <p class="opacity-95">Your team's attendance rate has improved by 12% compared to last week. Keep maintaining this momentum for better productivity.</p>
+              </div>
+              <div class="flex flex-col gap-2 w-full md:w-auto">
+                <a href="#" class="bg-white/18 hover:bg-white/25 text-white px-4 py-2 rounded-lg font-semibold text-center transition-colors">
+                  View Detailed Report
+                </a>
+                <a href="#" class="bg-white/12 hover:bg-white/18 text-white px-4 py-2 rounded-lg font-semibold text-center transition-colors">
+                  Share Results
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="px-4 sm:px-10 py-10 bg-footer text-light">
-    <div class="flex flex-col md:flex-row justify-between">
-
-      <div>
-        <img src="public/logo1.png" class="h-16 mt-4" alt="Logo">
-        <p class="max-w-xs text-gray-300 mb-4" >
-          Connecting students worldwide to learn and grow together.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2 text-light">Quick Links</h3>
-        <ul class="space-y-1 text-gray-300">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>How It Works</li>
-          <li>Contact</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2 text-light">Resources</h3>
-        <ul class="space-y-1 text-gray-300" >
-          <li>Help Center</li>
-          <li>Privacy Policy</li>
-          <li>Terms of Service</li>
-          <li>FAQs</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2 text-light">Get in Touch</h3>
-        <p class="text-gray-300 mb-3">hello@esprit2peer.com</p>
-
-        <div class="flex gap-4">
-          <img src="public/facebook.png" class="h-6">
-          <img src="public/instagram.png" class="h-6">
-          <img src="public/twitter.png" class="h-6">
+  <!-- Footer -->
+  <footer class="bg-footer text-white mt-12 lg:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3">
+            <img src="public/logo1.png" alt="Logo" class="h-10 lg:h-12">
+          </div>
+          <p class="mt-3 lg:mt-4 text-gray-300 text-sm">Connecting students worldwide to achieve academic excellence together.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Quick Links</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-accent transition-colors">Home</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">How It Works</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Resources</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-accent transition-colors">Help Center</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Get in Touch</h4>
+          <p class="text-gray-300 mb-4 lg:mb-6 text-sm">hello@esprit2peer.com</p>
+          <div class="flex gap-4 lg:gap-6">
+            <img src="public/facebook.png" class="h-7 lg:h-8 w-auto" alt="Facebook">
+            <img src="public/instagram.png" class="h-7 lg:h-8 w-auto" alt="Instagram">
+            <img src="public/twitter.png" class="h-7 lg:h-8 w-auto" alt="Twitter">
+          </div>
         </div>
       </div>
-
+      <div class="text-center text-gray-400 text-xs lg:text-sm mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-gray-700">
+        © 2025 Esprit2Peer. All rights reserved. Made with Love for students
+      </div>
     </div>
-
-    <p class="text-center text-gray-400 mt-10 text-light">
-      © 2025 Esprit2Peer. All Rights Reserved.
-    </p>
   </footer>
-
 </body>
 </html>

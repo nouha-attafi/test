@@ -1,121 +1,195 @@
+/* file.css - Fichier CSS complet fusionné */
 @import "tailwindcss";
 
-/* ============================================
-   VARIABLES GLOBALES
-   ============================================ */
 :root {
-  /* Couleurs principales */
+  --color-primary: #fdfbee;
+  --color-secondary: #57B4BA;
+    --color-textblue: #32B4AE;
+  --color-accent: #FE4F2D;
+  --color-accent-30: rgb(254, 79, 45, 0.3);
+   --color-card:#F7F4E8;
+  --color-darkgreen: #015551;
+  --color-light: #FFFFFF;
+  --footer-bg: #004A4A;
+  --footer-bg-30: rgb(0, 74, 74, 0.3);
+
+  --color-text: #000000;
+  --color-background: rgb(255, 255, 255, 0.4);
+  --color-button1-start: rgba(254, 79, 45, 0.56); /* #FE4F2D à 56% */
+  --color-button1-end: rgba(255, 54, 14, 1);      /* #FF360E à 100% */
+  --color-p-start: #32B4AE;
+   --color-p-end: #FE4F2D; 
+   --color-b-satart:#57B4BA;
+   --color-b-end:#10B981;
+   --color-backgroundSession: rgb(254, 79, 45, 0.61);
+     --color-backgroundSession1:rgb(0, 74, 74, 0.15);
+
+
+
+}
+
+@theme {
+  /* Variables de couleurs harmonisées */
   --color-primary: #fdfbee;
   --color-secondary: #57B4BA;
   --color-accent: #FE4F2D;
   --color-darkgreen: #015551;
-  --color-light: #FFFFFF;
-  --color-text: #000000;
-  
-  /* Couleurs spécifiques */
-  --color-textblue: #32B4AE;
-  --color-card: #F7F4E8;
+  --color-dark-green: #015551;
   --color-beige: #f8f6e9;
   --color-dark-teal: #0a3e3d;
-  
-  /* Footer */
-  --footer-bg: #004A4A;
-  --footer-bg-30: rgba(0, 74, 74, 0.3);
-  
-  /* Transparences */
+  --color-light: #FFFFFF;
+  --color-footer: #004A4A;
+  --color-card: #F7F4E8;
+  --color-textblue: #32B4AE;
+  --color-text-blue: #32B4AE;
   --color-accent-30: rgba(254, 79, 45, 0.3);
-  --color-background: rgba(255, 255, 255, 0.4);
+  --color-footer-30: rgba(0, 74, 74, 0.3);
+  --color-background-session: rgba(254, 79, 45, 0.61);
+  --color-background-session1: rgba(0, 74, 74, 0.15);
   --color-backgroundSession: rgba(254, 79, 45, 0.61);
   --color-backgroundSession1: rgba(0, 74, 74, 0.15);
   
-  /* Gradients */
-  --gradient-button-start: rgba(254, 79, 45, 0.56);
-  --gradient-button-end: #FF360E;
-  --gradient-text-start: #32B4AE;
-  --gradient-text-end: #FE4F2D;
-  --gradient-blue-start: #57B4BA;
-  --gradient-blue-end: #10B981;
-  
-  /* Planner colors */
+  /* Couleurs spécifiques */
+  --color-text: #000000;
+  --color-background: rgba(255, 255, 255, 0.4);
   --color-red-light: #fca5a5;
-  --color-red: #f87171;
   --color-red-dark: #9b1c1c;
   --color-blue-light: #60a5fa;
   --color-blue-dark: #1e40af;
   --color-teal-light: #b9d9d9;
   --color-gray-light: #5a7a79;
-  
-  /* Calendar colors */
-  --color-calendar-bg-start: #f8fafc;
-  --color-calendar-bg-end: #ffffff;
-  
-  /* Analytics colors */
-  --bg-analytics: #fbf9ef;
+  --color-analytics-bg: #fbf9ef;
   --color-deep: #073f39;
   --color-mint-1: #dbf3e9;
   --color-mint-2: #bfe9d8;
   --color-peach: #ff7b6b;
   --color-muted: #8b8b8b;
   
-  /* Layout */
-  --rounded: 14px;
-  --container-max: 1100px;
+  /* Gradients */
+  --color-button1-start: rgba(254, 79, 45, 0.56);
+  --color-button1-end: rgba(255, 54, 14, 1);
+  --color-p-start: #32B4AE;
+  --color-p-end: #FE4F2D;
+  --color-b-start: #57B4BA;
+  --color-b-end: #10B981;
+  
+  /* Espacements personnalisés */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-51: 12.75rem;
+  
+  /* Bordures arrondies */
+  --radius-14: 14px;
+  
+  /* Font families */
+  --font-family-heading: Poppins, Inter, system-ui, sans-serif;
 }
 
-/* ============================================
-   TAILWIND BASE
-   ============================================ */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* ============================================
-   CLASSES UTILITAIRES COULEURS
-   ============================================ */
+/* Classes de couleurs personnalisées */
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-accent { background-color: var(--color-accent); }
-.bg-footer { background-color: var(--footer-bg); }
+.bg-footer { background-color: var(--color-footer); }
 .bg-beige { background-color: var(--color-beige); }
 .bg-dark-teal { background-color: var(--color-dark-teal); }
 .bg-bgCard { background-color: var(--color-card); }
 .bg-session { background-color: var(--color-backgroundSession); }
 .bg-session1 { background-color: var(--color-backgroundSession1); }
 .bg-accent-30 { background-color: var(--color-accent-30); }
-.bg-footer-30 { background-color: var(--footer-bg-30); }
+.bg-footer-30 { background-color: var(--color-footer-30); }
 .bg-back-4 { background-color: var(--color-background); }
 
-/* Planner backgrounds */
-.bg-red-light { background-color: var(--color-red-light); }
-.bg-red { background-color: var(--color-red); }
-.bg-blue-light { background-color: var(--color-blue-light); }
-.bg-teal-light { background-color: var(--color-teal-light); }
-
-/* Text colors */
+/* Couleurs de texte */
 .text-primary { color: var(--color-primary); }
 .text-secondary { color: var(--color-secondary); }
 .text-accent { color: var(--color-accent); }
 .text-dark-teal { color: var(--color-dark-teal); }
-.text-red-dark { color: var(--color-red-dark); }
-.text-blue-dark { color: var(--color-blue-dark); }
-.text-gray-light { color: var(--color-gray-light); }
+.text-darkgreen { color: var(--color-darkgreen); }
+.text-accent1 { color: var(--color-accent); }
+.text-textlight { color: var(--color-light); }
+.text-textdark { color: var(--color-text); }
+.text-textblue1 { color: var(--color-textblue); }
+.text-textgreen { color: var(--color-darkgreen); }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
 .bg-accent1 { color: var(--color-accent); }
 .bg-textlight { color: var(--color-light); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.bg-footer { background-color: var(--footer-bg); }
 .bg-textdark { color: var(--color-text); }
+.border-primary { border-color: var(--color-primary); }
 .bg-textblue1 { color: var(--color-textblue); }
 .bg-textgreen { color: var(--color-darkgreen); }
-
-/* Borders */
+.bg-accent-30 { background-color: var(--color-accent-30); }
+.bg-footer-30 { background-color: var(--footer-bg-30); }
+.bg-back-4 { background-color: var(--color-background); }
+.bg-bgCard{ background-color: var(--color-card); }
+.bg-session { background-color: var(--color-backgroundSession); }
+.bg-session1 { background-color: var( --color-backgroundSession1); }
+/* Bordures */
 .border-primary { border-color: var(--color-primary); }
 
-/* ============================================
-   COMPOSANTS RÉUTILISABLES
-   ============================================ */
+/* Classes de gradients */
+.bg-gradient-red {
+  background: linear-gradient(to right, var(--color-button1-start), var(--color-button1-end));
+}
 
-/* Boutons avec gradients */
-.button,
-.button-gradient-red {
-  background: linear-gradient(to right, var(--gradient-button-start), var(--gradient-button-end));
+.bg-gradient-blue {
+  background: linear-gradient(to right, var(--color-b-start), var(--color-b-end));
+}
+
+.bg-gradient-text {
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-calendar {
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.bg-gradient-urgent {
+  background: linear-gradient(135deg, #ff6b5a 0%, #ff8a5a 100%);
+}
+
+.bg-gradient-medium {
+  background: linear-gradient(135deg, #ffb74d 0%, #ffa726 100%);
+}
+
+.bg-gradient-low {
+  background: linear-gradient(135deg, #81c9d8 0%, #64b5c5 100%);
+}
+
+.bg-gradient-present {
+  background: linear-gradient(90deg, #1fb88f, #0ea76e);
+}
+
+.bg-gradient-absent {
+  background: linear-gradient(90deg, #ffb8ae, #ff7b6b);
+}
+
+.bg-gradient-pending {
+  background: linear-gradient(90deg, #7fd3cc, #1fb88f);
+}
+
+.bggrad {
+  background: linear-gradient(
+    to right,
+    rgba(47, 182, 137, 0.863),
+    #949e868c, 
+    rgba(254, 79, 45, 0.42)   
+  );
+}
+
+/* Classes pour les boutons avec compatibilité */
+.button, .button-gradient-red {
+  background: linear-gradient(to right, var(--color-button1-start), var(--color-button1-end));
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -125,14 +199,12 @@
   transition: opacity 0.2s;
 }
 
-.button:hover,
-.button-gradient-red:hover {
+.button:hover, .button-gradient-red:hover {
   opacity: 0.9;
 }
 
-.button2,
-.button-gradient-blue {
-  background: linear-gradient(to right, var(--gradient-blue-start), var(--gradient-blue-end));
+.button2, .button-gradient-blue {
+  background: linear-gradient(to right, var(--color-b-start), var(--color-b-end));
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -142,15 +214,13 @@
   transition: opacity 0.2s;
 }
 
-.button2:hover,
-.button-gradient-blue:hover {
+.button2:hover, .button-gradient-blue:hover {
   opacity: 0.9;
 }
 
-/* Texte avec gradient */
-.p,
-.text-gradient {
-  background: linear-gradient(to right, var(--gradient-text-start), var(--gradient-text-end));
+/* Classes de texte avec gradient */
+.p, .text-gradient {
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -161,606 +231,113 @@
 .gradient-hr {
   border: none;
   height: 2px;
-  background: linear-gradient(to right, var(--gradient-text-start), var(--gradient-text-end));
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
   border-radius: 2px;
 }
 
-/* Calendar gradient */
-.bg-gradient-calendar {
-  background: linear-gradient(to bottom, var(--color-calendar-bg-start), var(--color-calendar-bg-end));
-}
-
-/* Navigation spacing */
-.nav-gap-51 {
-  display: flex;
-  gap: 51px;
-}
-
-/* ============================================
-   ANALYTICS PAGE - STYLES SPÉCIFIQUES
-   ============================================ */
-
-/* Reset global pour la page analytics */
-.page * {
-  box-sizing: border-box;
-}
-
-/* Container principal */
-.page {
-  max-width: var(--container-max);
-  margin: 18px auto 80px;
-  padding: 1rem;
-}
-
-/* Titres */
-.page h1 {
-  font-family: Poppins, Inter, sans-serif;
-  font-size: clamp(1.5rem, 4vw, 1.75rem);
-  margin: 8px 0 18px;
-  color: #0c3f3a;
-  font-weight: 700;
-}
-
-.sub {
-  color: var(--color-muted);
-  margin-bottom: 22px;
-  font-size: clamp(0.875rem, 3vw, 0.875rem);
-}
-
-/* Card générique */
-.card {
-  background: var(--color-light);
-  border-radius: var(--rounded);
-  padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(6, 40, 36, 0.06);
-}
-
-/* Grid Analytics */
-.analytics-grid {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 22px;
-  align-items: start;
-}
-
-/* Colonne gauche */
-.left-col {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-/* Pie Chart Card */
-.pie-card {
-  background: var(--color-light);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 6px 14px rgba(6, 40, 36, 0.04);
-}
-
-.pie {
-  width: min(160px, 40vw);
-  height: min(160px, 40vw);
-  margin: 0 auto;
-  border-radius: 50%;
+/* Pie chart pour analytics */
+.conic-gradient-pie {
   background: conic-gradient(
     #1fb88f 0 85%,
     #ffad9d 85% 95%,
     #7fd3cc 95% 100%
   );
-  box-shadow: inset 0 -8px 18px rgba(255, 255, 255, 0.05);
 }
 
-/* Legend */
-.legend {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 12px;
-  font-size: 13px;
-  color: var(--color-muted);
-  flex-wrap: wrap;
+/* Classes utilitaires */
+.rounded-14 {
+  border-radius: 14px;
 }
 
-.legend span {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+.nav-gap-51 {
+  gap: 12.75rem;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.dot.present { background: #1fb88f; }
-.dot.absent { background: #ffad9d; }
-.dot.pending { background: #7fd3cc; }
-
-/* Summary Card */
-.summary-card {
-  padding: 18px;
-}
-
-.summary-title {
-  margin-top: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.summary-text {
-  color: var(--color-muted);
-  margin: 8px 0 0;
-  line-height: 1.5;
-}
-
-.summary-button {
-  margin-top: 12px;
-}
-
-.view-details-btn {
-  text-decoration: none;
-  background: var(--color-peach);
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  display: inline-block;
-  transition: background 0.2s;
-}
-
-.view-details-btn:hover {
-  background: #ff6b5b;
-}
-
-/* Hero Section */
-.hero {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--color-light);
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(6, 40, 36, 0.04);
-}
-
-.hero .msg {
-  flex: 1;
-}
-
-.hero-title {
-  color: var(--color-peach);
-  margin: 0 0 6px;
-  font-size: clamp(1.125rem, 4vw, 1.375rem);
-  font-weight: 700;
-}
-
-.hero-subtitle {
-  margin: 0;
-  color: var(--color-muted);
-  line-height: 1.5;
-}
-
-.hero-illustration {
-  width: min(120px, 30vw);
-  height: min(120px, 30vw);
-  background: linear-gradient(180deg, #de533a, #fff);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.illustration-img {
-  width: 86px;
-  height: 86px;
-  object-fit: contain;
-}
-
-/* Stats Grid */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.stat {
-  background: linear-gradient(180deg, var(--color-mint-1), #eaf9f0);
-  padding: 18px;
-  border-radius: 12px;
-  min-height: 86px;
-  box-shadow: 0 6px 10px rgba(6, 40, 36, 0.03);
-  position: relative;
-}
-
-.stat.red,
-.stat.absent-stat {
-  background: linear-gradient(180deg, #ffeaea, #ffd6d2);
-}
-
-.stat-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.stat-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.04);
-  flex-shrink: 0;
-}
-
-.pending-icon {
-  background: rgba(127, 211, 204, 0.2);
-}
-
-.present-icon {
-  background: rgba(31, 184, 143, 0.2);
-}
-
-.absent-icon {
-  background: rgba(255, 173, 157, 0.2);
-}
-
-.stat-label {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 600;
-  color: #073f39;
-}
-
-.stat-percent {
-  position: absolute;
-  right: 14px;
-  top: 12px;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #0a6b5b;
-}
-
-.stat.red .stat-percent,
-.stat.absent-stat .stat-percent {
-  color: #d94b41;
-}
-
-.present-percent {
-  color: #0f7f61 !important;
-}
-
-.stat-description {
-  margin-top: 12px;
-  color: var(--color-muted);
-  font-size: 13px;
-}
-
-.absent-description {
-  color: #b64b42;
-}
-
-/* Progress Bar */
-.progress-bar {
-  height: 8px;
-  background: #e9f7f1;
-  border-radius: 8px;
-  margin-top: 8px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: 8px;
-}
-
-.pending-fill {
-  width: 10%;
-  background: linear-gradient(90deg, #7fd3cc, #1fb88f);
-}
-
-.present-fill {
-  width: 85%;
-  background: linear-gradient(90deg, #1fb88f, #0ea76e);
-}
-
-.absent-bar {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.absent-fill {
-  width: 5%;
-  background: linear-gradient(90deg, #ffb8ae, #ff7b6b);
-}
-
-/* Performance Banner */
-.performance {
-  margin-top: 22px;
-  border-radius: 12px;
-  padding: 22px;
-  background: linear-gradient(90deg, #00b67c 0%, #0da77a 40%, #0fa37a 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.performance .txt {
-  flex: 1;
-}
-
-.performance-title {
-  margin: 0 0 6px;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.performance-text {
-  margin: 0;
-  opacity: 0.95;
-  line-height: 1.5;
-}
-
-.performance-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-end;
-}
-
-.performance-btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  
-  color: #fff;
-  font-weight: 600;
-  transition: background 0.2s;
-  white-space: nowrap;
-}
-
-.report-btn {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.report-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.share-btn {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.share-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* ============================================
-   PLANNER PAGE - STYLES SPÉCIFIQUES
-   ============================================ */
-body {
-  background-color: var(--color-beige);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.nav-link {
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: #fb923c;
-}
-
-.nav-link.active {
-  color: #fb923c;
-}
-
-.event-card {
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.event-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.event-study {
-  background-color: #fca5a5;
-  color: #7f1d1d;
-  border-left: 4px solid #dc2626;
-}
-
-.event-group {
-  background-color: #a5f3fc;
-  color: #0e7490;
-  border-left: 4px solid #06b6d4;
-}
-
-.event-team {
-  background-color: #fed7aa;
-  color: #9a3412;
-  border-left: 4px solid #ea580c;
-}
-
-.event-lecture {
-  background-color: #e0e7ff;
-  color: #3730a3;
-  border-left: 4px solid #4f46e5;
-}
-
-.event-review {
-  background-color: #d1fae5;
-  color: #065f46;
-  border-left: 4px solid #10b981;
-}
-
-.time-slot {
-  height: 60px;
-  border-bottom: 1px solid #e5e7eb;
-  position: relative;
-}
-
-.day-column {
-  border-right: 1px solid #e5e7eb;
-  position: relative;
-  min-width: 120px;
-}
-
-.day-column.today {
-  background-color: rgba(185, 217, 217, 0.1);
-}
-
-.add-event-btn {
-  background: linear-gradient(to right, #FE4F2D, #FF360E);
-  transition: opacity 0.2s;
-}
-
-.add-event-btn:hover {
-  opacity: 0.9;
-}
-
-.week-nav-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.week-nav-btn:hover {
-  background-color: #f3f4f6;
-  border-color: #d1d5db;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1);
-  transition: opacity 0.2s;
-}
-
-.social-icon:hover {
-  opacity: 0.8;
-}
-
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-/* Tablettes et petits écrans */
-@media (max-width: 1050px) {
-  .analytics-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .page {
-    padding: 1rem;
-    margin: 1rem auto 4rem;
-  }
-  
-  .card {
-    padding: 1rem;
-  }
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
 }
 
-/* Mobile */
+/* Styles responsives */
 @media (max-width: 768px) {
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-  
-  .hero-illustration {
-    order: -1;
-  }
-  
-  .performance {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-  
-  .performance-buttons {
-    align-items: center;
-    width: 100%;
-  }
-  
-  .performance-btn {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .legend {
-    justify-content: space-around;
-  }
-  
   .nav-gap-51 {
-    display: none;
-  }
-
-  .day-column {
-    min-width: 100px;
+    gap: 2rem;
   }
   
-  .event-card {
-    font-size: 10px;
-    padding: 6px 8px;
+  .calendar-grid {
+    min-width: 600px;
   }
 }
 
-/* Petits mobiles */
-@media (max-width: 520px) {
-  .hero-title {
-    font-size: 1.125rem;
+@media (max-width: 480px) {
+  .calendar-grid {
+    min-width: 500px;
   }
-  
-  .pie {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .stat {
-    min-height: auto;
-    padding: 1rem;
-  }
-  
-  .stat-percent {
-    position: static;
-    text-align: center;
-    margin-top: 0.5rem;
-    display: block;
-  }
-  
-  .stat-header {
-    justify-content: center;
-  }
-  
-  .page h1 {
-    font-size: 1.25rem;
-  }
+}
+
+
+
+.button {
+  background: linear-gradient(
+    to right,
+    var(--color-button1-start),
+    var(--color-button1-end)
+  );
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button2 {
+  background: linear-gradient(
+    to right,
+    var(--color-b-satart),
+    var(--color-b-end)
+  );
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.p {
+  background: linear-gradient(
+    to right,
+    var(--color-p-start),
+    var(--color-p-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Pour Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-hr {
+  border: none; /* Supprime la bordure par défaut */
+  height: 2px;  /* Hauteur de la ligne */
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
+  border-radius: 2px; /* Optionnel pour arrondir les bords */
+}
+
+.nav-gap-51 {
+  display: flex; 
+  gap: 51px;
+}
+
+.bggrad {
+  background: linear-gradient(
+    to right,
+    rgba(47, 182, 137, 0.863),
+    #949e868c, 
+    rgba(254, 79, 45, 0.42)   
+  );
 }
