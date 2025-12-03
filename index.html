@@ -1,325 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esprit2Peer</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
-
-  <!-- Tailwind CDN with plugins -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-
-  <!-- Ton CSS local -->
-  <link rel="stylesheet" href="public/output.css">
-
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#fdfbee", 
-            secondary: "#57B4BA",
-            accent: "#FE4F2D",
-            footer: "#004A4A", 
-            "text-light": "#111827",
-            "text-dark": "#F9FAFB",
-            "subtle-light": "#6B7280",
-            "subtle-dark": "#D1D5DB",
-            "border-light": "#D1D5DB",
-            "border-dark": "#4B5563",
-            "darkgreen": "#015551",
-            "textblue": "#32B4AE",
-            "card": "#F7F4E8",
-            "background-light": "#FDFBF7",
-            "surface-light": "#E9F5F1",
-            "text": "#0F2727",
-            "textgreen": "#0F2727",
-            "textblue1": "#0F2727",
-            "accent1": "#FE4F2D",
-            "accent-30": "rgba(254, 79, 45, 0.1)",
-            "footer-30": "rgba(0, 74, 74, 0.1)"
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Create New Event Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <!-- nouha added this - custom CSS file reference -->
+    <link rel="stylesheet" href="file.css" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#fdfbee", 
+              secondary: "#57B4BA",
+              accent: "#FE4F2D",
+              footer: "#004A4A", 
+              "text-light": "#111827",
+              "text-dark": "#F9FAFB",
+              "subtle-light": "#6B7280",
+              "subtle-dark": "#D1D5DB",
+              "border-light": "#D1D5DB",
+              "border-dark": "#4B5563",
+             
+              "darkgreen": "#015551",
+              "textblue": "#32B4AE",
+              "card": "#F7F4E8",
+              "background-light": "#FDFBF7",
+              "surface-light": "#E9F5F1",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
           },
-          fontFamily: {
-            display: ["Inter", "sans-serif"],
-          },
-          borderRadius: {
-            DEFAULT: "0.5rem",
-          },
-          screens: {
-            'xs': '475px',
-            '3xl': '1920px',
-          }
         },
-      },
-    };
-  </script>
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .material-icons, .material-symbols-outlined {
-      font-size: inherit;
-    }
-  </style>
+      };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-icons, .material-symbols-outlined {
+            font-size: inherit;
+        }
+        
+        /* nouha added this - mobile menu animation */
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+        
+        /* nouha added this - for gradient backgrounds */
+        .bggrad {
+            background: linear-gradient(
+                to right,
+                rgba(47, 182, 137, 0.863),
+                #949e868c, 
+                rgba(254, 79, 45, 0.42)   
+            );
+        }
+        
+        /* nouha added this - for button gradients */
+        .button {
+            background: linear-gradient(
+                to right,
+                rgba(254, 79, 45, 0.56),
+                rgba(255, 54, 14, 1)
+            );
+            color: white;
+        }
+        
+        .button2 {
+            background: linear-gradient(
+                to right,
+                #57B4BA,
+                #10B981
+            );
+            color: white;
+        }
+    </style>
 </head>
+<body class="bg-primary text-text min-h-screen">
+    <div id="root">
+        <!-- HEADER - identical to Alaa's page -->
+        <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
+            <img src="public/logo.png" class="h-8 sm:h-10 md:h-12" alt="Logo">
+            <nav class="hidden lg:flex gap-4 xl:gap-6 2xl:gap-8 text-white text-base xl:text-lg font-regular">
+                <a href="#" class="hover:text-orange-400">Home</a>
+                <a href="#" class="hover:text-orange-400">Planner</a>
+                <a href="#" class="hover:text-orange-400">Matchmaking</a>
+                <a href="#" class="hover:text-orange-400">Focus</a>
+                <a href="#" class="hover:text-orange-400">Analytics</a>
+                <a href="#" class="text-orange-400">Forum</a>
+            </nav>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-5">
+                <button class="text-white hover:text-orange-300 transition hidden sm:block">
+                    <span class="material-symbols-outlined text-xl sm:text-2xl md:text-3xl">notifications</span>
+                </button>
+                <button class="text-white hover:text-orange-300 transition hidden sm:block">
+                    <span class="material-symbols-outlined text-xl sm:text-2xl md:text-3xl">settings</span>
+                </button>
+                <img src="public/f2.png" alt="User Avatar" class="h-8 w-8 sm:h-9 sm:w-9 md:h-11 md:w-11 rounded-full object-cover">
+                <button id="mobile-menu-button" class="lg:hidden text-white">
+                    <span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>
+                </button>
+            </div>
+        </header>
 
-<body class="bg-primary text-text font-sans">
+        <!-- nouha added this - mobile menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-4 sm:px-6 py-4 hidden">
+            <nav class="flex flex-col gap-3 sm:gap-4 text-white">
+                <a href="#" class="hover:text-orange-400 py-1 sm:py-2 text-sm sm:text-base">Home</a>
+                <a href="#" class="hover:text-orange-400 py-1 sm:py-2 text-sm sm:text-base">Planner</a>
+                <a href="#" class="hover:text-orange-400 py-1 sm:py-2 text-sm sm:text-base">Match Making</a>
+                <a href="#" class="hover:text-orange-400 py-1 sm:py-2 text-sm sm:text-base">Focus</a>
+                <a href="#" class="text-orange-400 py-1 sm:py-2 text-sm sm:text-base">Analytics</a>
+                <a href="#" class="hover:text-orange-400 py-1 sm:py-2 text-sm sm:text-base">Forum</a>
+            </nav>
+            <div class="flex justify-center gap-4 sm:gap-6 mt-4 sm:hidden">
+                <button class="text-white hover:text-orange-300 transition">
+                    <span class="material-symbols-outlined text-xl sm:text-2xl">notifications</span>
+                </button>
+                <button class="text-white hover:text-orange-300 transition">
+                    <span class="material-symbols-outlined text-xl sm:text-2xl">settings</span>
+                </button>
+            </div>
+        </div>
 
-  
-<header class="flex justify-between items-center px-8 py-4 bg-footer rounded-xl mx-12 mt-4 shadow-md">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png" 
-     class="h-12" 
-     alt="Logo">
-     
-  <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
-    <a href="#" class="hover:text-orange-400">Home</a>
-    <a href="#" class="hover:text-orange-400">Features</a>
-    <a href="#" class="hover:text-orange-400">About Us</a>
-    <a href="#" class="hover:text-orange-400">Contact Us</a>
-  </nav>
+        <main class="py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Back button with updated styling -->
+                <a class="inline-flex items-center text-xs sm:text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-accent dark:hover:text-white mb-4 sm:mb-6" href="#">
+                    <span class="material-icons text-base sm:text-lg mr-1">arrow_back</span>
+                    Back to Calendar
+                </a>
 
-  <div class="flex gap-4">
-    <button class="bg-accent text-white px-5 py-2 rounded-full hover:bg-orange-600 font-semibold">Sign Up</button>
-    <button class="bg-white text-[#0D3B36] px-5 py-2 rounded-full hover:bg-gray-100 font-semibold">Log In</button>
-  </div>
-</header>
+                <!-- Form container with updated styling -->
+                <div class="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-12">
+                    <h1 class="text-xl sm:text-2xl md:text-3xl font-semibold text-[var(--footer-bg)] mb-4 sm:mb-6 md:mb-8">
+                        Create New Event
+                    </h1>
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 lg:gap-x-8 xl:gap-x-12 gap-y-4 sm:gap-y-6">
+                            <!-- Left Column -->
+                            <div class="space-y-4 sm:space-y-6">
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="event-title">Event Title</label>
+                                    <input class="mt-1 block w-full rounded-md bg-white dark:bg-gray-700 border-border-light dark:border-border-dark focus:ring-accent focus:border-accent text-sm sm:text-base px-3 py-2" 
+                                           id="event-title" name="event-title" placeholder="Enter event title..." type="text"/>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="tags">Tags</label>
+                                    <div class="mt-1 flex items-center flex-wrap gap-1 sm:gap-2">
+                                        <span class="inline-flex items-center py-1 px-2 sm:pl-2.5 sm:pr-1 rounded-full text-xs sm:text-sm font-medium bg-green-200 text-green-800">
+                                            Important
+                                            <button class="ml-1 flex-shrink-0 p-0.5 rounded-full inline-flex items-center justify-center text-green-600 hover:bg-green-300 focus:outline-none" type="button">
+                                                <span class="material-icons text-xs sm:text-sm">close</span>
+                                            </button>
+                                        </span>
+                                        <span class="inline-flex items-center py-1 px-2 sm:pl-2.5 sm:pr-1 rounded-full text-xs sm:text-sm font-medium bg-blue-200 text-blue-800">
+                                            Work
+                                            <button class="ml-1 flex-shrink-0 p-0.5 rounded-full inline-flex items-center justify-center text-blue-600 hover:bg-blue-300 focus:outline-none" type="button">
+                                                <span class="material-icons text-xs sm:text-sm">close</span>
+                                            </button>
+                                        </span>
+                                        <button class="inline-flex items-center px-2 sm:px-2.5 py-1 rounded-full text-xs sm:text-sm font-medium bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-500" type="button">
+                                            <span class="material-icons text-sm sm:text-base mr-1">add</span>
+                                            Add Tag
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark">Event Type</label>
+                                    <div class="mt-1 grid grid-cols-3 gap-1 sm:gap-2 bg-gray-200 dark:bg-gray-600 p-1 rounded-md">
+                                        <button class="px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-white dark:bg-gray-800 shadow-sm text-accent dark:text-white" type="button">Event</button>
+                                        <button class="px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md text-gray-600 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-700" type="button">Task</button>
+                                        <button class="px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md text-gray-600 dark:text-gray-300 hover:bg-white/50 dark:hover:bg-gray-700" type="button">Appointment</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="guests">Guests</label>
+                                    <div class="mt-1 space-y-1 sm:space-y-2">
+                                        <div class="flex flex-wrap gap-1 sm:gap-2">
+                                            <span class="inline-flex items-center py-1 px-1.5 sm:pl-1.5 sm:pr-1 rounded-full text-xs sm:text-sm font-medium bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200">
+                                                <img alt="imen bc avatar" class="w-4 h-4 sm:w-5 sm:h-5 rounded-full mr-1 sm:mr-1.5 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm9kUd601KX_SFQOP98-4noYKYtva9A9oQfETMlN3rsZXyVNS7U-_5fg0938Z-88SYWIx1JexEGzyusInYhXd3T7dbv8y0H3S9By-bMYybVAr_a0PM5tO7qdsDT2ePtDS7nu8K1aVrNu8JRfN60U3mDcLQ6ehxxhR7lVW0Pnyq6cEwtt6XZnL2Ame_w9UiignB4wRLPlz2kNIBJ7R2HJxYF92xGPOgwRLnVx6zSVwjynYebQ37S8qsrTPuZv-bI9MPCWq7j204vlY"/>
+                                                imen bc
+                                                <button class="ml-0.5 sm:ml-1 flex-shrink-0 p-0.5 rounded-full inline-flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-500 focus:outline-none" type="button">
+                                                    <span class="material-icons text-xs sm:text-sm">close</span>
+                                                </button>
+                                            </span>
+                                            <span class="inline-flex items-center py-1 px-1.5 sm:pl-1.5 sm:pr-1 rounded-full text-xs sm:text-sm font-medium bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200">
+                                                <img alt="alaa bj avatar" class="w-4 h-4 sm:w-5 sm:h-5 rounded-full mr-1 sm:mr-1.5 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMphf4utWv4rfKPIAzQIH8TyBOEUmISExtbqVvPYtuPOdf1j2iwPnhP-PBYg9nrjlsTy8YFIl1IEibMNk-GeX5VJJQm1HN6nNTx6F-t6JYCBVbFp-vI1ehd_6fUHC1o_qPuRDdGX4nl-5LL0mxYPdf-1adKhVpLjHJtSnnV2VmaolMLTWBqxx40jeMtTCbv9UHqcyHE7J8ZrvxM3LWt0rnxOe5p9MuUCJ4J7maKU5qWoGnhKX6bnEOU5jIPWAiakSBLTcVXWfVyLo"/>
+                                                alaa bj
+                                                <button class="ml-0.5 sm:ml-1 flex-shrink-0 p-0.5 rounded-full inline-flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-500 focus:outline-none" type="button">
+                                                    <span class="material-icons text-xs sm:text-sm">close</span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                        <div class="relative">
+                                            <input class="block w-full rounded-md bg-white dark:bg-gray-700 border-border-light dark:border-border-dark focus:ring-accent focus:border-accent text-sm sm:text-base px-3 py-2 pr-8 sm:pr-10" 
+                                                   id="guests" name="guests" placeholder="Add guests by email..." type="email"/>
+                                            <button class="absolute inset-y-0 right-0 flex items-center pr-2 sm:pr-3 text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" type="button">
+                                                <span class="material-icons text-lg sm:text-xl">add</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="description">Description</label>
+                                    <textarea class="mt-1 block w-full rounded-md bg-white dark:bg-gray-700 border-border-light dark:border-border-dark focus:ring-accent focus:border-accent text-sm sm:text-base px-3 py-2" 
+                                              id="description" name="description" placeholder="Add event description..." rows="4 sm:rows-5"></textarea>
+                                </div>
+                            </div>
 
+                            <!-- Right Column -->
+                            <div class="space-y-4 sm:space-y-6">
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="date">Date</label>
+                                    <div class="relative mt-1">
+                                        <input class="block w-full rounded-md bg-white dark:bg-gray-700 border-border-light dark:border-border-dark focus:ring-accent focus:border-accent text-sm sm:text-base px-3 py-2 pr-8 sm:pr-10" 
+                                               id="date" name="date" type="text" value="2024-11-20"/>
+                                        <div class="absolute inset-y-0 right-0 pr-2 sm:pr-3 flex items-center pointer-events-none">
+                                            <span class="material-icons text-gray-400 text-sm sm:text-base">calendar_today</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium" for="time">Time</label>
+                                    <div class="mt-1 flex flex-col sm:flex-row sm:items-center gap-2">
+                                        <div class="relative flex-1">
+                                            <input class="block w-full rounded-md bg-white border border-gray-300 focus:ring-accent focus:border-accent text-sm sm:text-base px-3 py-2 pl-8 sm:pl-10 pr-3" 
+                                                   type="text" value="09:00" placeholder="Start time"/>
+                                            <div class="absolute inset-y-0 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
+                                                <span class="material-icons text-gray-400 text-sm sm:text-base">schedule</span>
+                                            </div>
+                                        </div>
+                                        <div class="relative flex-1">
+                                            <input class="block w-full rounded-md bg-white border border-gray-300 focus:ring-accent focus:border-accent text-sm sm:text-base px-3 py-2 pl-8 sm:pl-10 pr-3" 
+                                                   type="text" value="10:00" placeholder="End time"/>
+                                            <div class="absolute inset-y-0 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
+                                                <span class="material-icons text-gray-400 text-sm sm:text-base">schedule</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <input class="h-4 w-4 text-accent focus:ring-accent border-gray-300 dark:border-gray-500 dark:bg-gray-600 rounded" 
+                                           id="all-day" name="all-day" type="checkbox"/>
+                                    <label class="ml-2 block text-xs sm:text-sm text-text-light dark:text-text-dark" for="all-day">All day</label>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="repeat">Repeat</label>
+                                    <select class="mt-1 block w-full px-3 py-2 text-sm sm:text-base border-border-light dark:border-border-dark focus:outline-none focus:ring-accent focus:border-accent rounded-md bg-white dark:bg-gray-700" 
+                                            id="repeat" name="repeat">
+                                        <option>Does not repeat</option>
+                                        <option>Daily</option>
+                                        <option>Weekly</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark">Importance Level</label>
+                                    <div class="mt-1 grid grid-cols-3 gap-1 sm:gap-2">
+                                        <button class="flex items-center justify-center p-1.5 sm:p-2 border border-gray-300 dark:border-gray-500 rounded-md bg-white dark:bg-gray-700 text-xs sm:text-sm font-medium text-text-light dark:text-text-dark" type="button">
+                                            <span class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500 mr-1 sm:mr-2"></span> Low
+                                        </button>
+                                        <button class="flex items-center justify-center p-1.5 sm:p-2 border border-orange-500 rounded-md bg-orange-100 dark:bg-orange-900/30 text-xs sm:text-sm font-medium text-orange-700 dark:text-orange-300 ring-1 sm:ring-2 ring-orange-500" type="button">
+                                            <span class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-orange-500 mr-1 sm:mr-2"></span> Medium
+                                        </button>
+                                        <button class="flex items-center justify-center p-1.5 sm:p-2 border border-gray-300 dark:border-gray-500 rounded-md bg-white dark:bg-gray-700 text-xs sm:text-sm font-medium text-text-light dark:text-text-dark" type="button">
+                                            <span class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500 mr-1 sm:mr-2"></span> High
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="meeting-link">Meeting Link</label>
+                                    <div class="relative mt-1">
+                                        <input class="block w-full rounded-md bg-white dark:bg-gray-700 border-border-light dark:border-border-dark focus:ring-accent focus:border-accent text-sm sm:text-base px-3 py-2 pr-8 sm:pr-10" 
+                                               id="meeting-link" name="meeting-link" type="url" value="https://meet.google.com/inc0012345"/>
+                                        <button class="absolute inset-y-0 right-0 flex items-center pr-2 sm:pr-3 text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" type="button">
+                                            <span class="material-icons text-lg sm:text-xl">link</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-medium dark:text-subtle-dark" for="reminder">Reminder</label>
+                                    <select class="mt-1 block w-full px-3 py-2 text-sm sm:text-base border-border-light dark:border-border-dark focus:outline-none focus:ring-accent focus:border-accent rounded-md bg-white dark:bg-gray-700" 
+                                            id="reminder" name="reminder">
+                                        <option>15 minutes before</option>
+                                        <option>30 minutes before</option>
+                                        <option>1 hour before</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Save button with gradient styling -->
+                        <div class="mt-8 sm:mt-10 lg:mt-12 flex justify-center">
+                            <button class="button2 inline-flex items-center justify-center px-8 sm:px-12 md:px-16 lg:px-20 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-white" type="submit">
+                                <span class="material-icons mr-1 sm:mr-2 text-sm sm:text-base">save</span>
+                                Save Event
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
 
-<section class="relative mx-8 py-20 flex flex-col md:flex-row items-center overflow-hidden h-[746.61px] mt-8 bg-primary">
-
-  <!-- IMAGE DE BACKGROUND -->
-  <div 
-    class="absolute inset-0 bg-contain bg-center blur-sm opacity-90"
-    style="background-image: url('public/home.png');">
-  </div>
-
-  <div class="absolute inset-0 bg-white/20"></div>
-
-  <div class="relative flex-1 flex flex-col justify-between h-full space-y-6">
-
-    <h1 class="text-5xl font-bold text-textgreen mt-6 mx-10">
-      Study smarter,<br>
-      <span class="text-accent1">together.</span>
-    </h1>
-
-    <div class="flex flex-col items-center mb-6 space-y-4">
-      <p class="text-lg max-w-lg text-center text-textgreen">
-        Find study partners, stay focused, and plan your academic success with AI tools.
-      </p>
-      <button class="bg-accent text-white px-6 py-3 rounded-xl hover:bg-orange-600">
-        Find a Study Partner
-      </button>
+        <!-- FOOTER -->
+        <footer class="bg-footer text-white mt-8 sm:mt-12 lg:mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-6 sm:py-8 lg:py-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+                    <div class="sm:col-span-2 lg:col-span-1">
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <img src="public/logo1.png" alt="Logo" class="h-8 sm:h-10 lg:h-12">
+                        </div>
+                        <p class="mt-2 sm:mt-3 lg:mt-4 text-gray-300 text-xs sm:text-sm">Connecting students worldwide to achieve academic excellence together.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4">Quick Links</h4>
+                        <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
+                            <li><a href="#" class="hover:text-orange-400">Home</a></li>
+                            <li><a href="#" class="hover:text-orange-400">About Us</a></li>
+                            <li><a href="#" class="hover:text-orange-400">How It Works</a></li>
+                            <li><a href="#" class="hover:text-orange-400">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4">Resources</h4>
+                        <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
+                            <li><a href="#" class="hover:text-orange-400">Help Center</a></li>
+                            <li><a href="#" class="hover:text-orange-400">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-orange-400">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-orange-400">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="sm:col-span-2 lg:col-span-1">
+                        <h4 class="font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4">Get in Touch</h4>
+                        <p class="text-gray-300 mb-3 sm:mb-4 lg:mb-6 text-xs sm:text-sm">hello@esprit2peer.com</p>
+                        <div class="flex gap-3 sm:gap-4 lg:gap-6">
+                            <img src="public/facebook.png" class="h-6 sm:h-7 lg:h-8" alt="FB">
+                            <img src="public/instagram.png" class="h-6 sm:h-7 lg:h-8" alt="IG">
+                            <img src="public/twitter.png" class="h-6 sm:h-7 lg:h-8" alt="TW">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center text-gray-400 text-xs sm:text-sm mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-gray-700">
+                    © 2025 Esprit2Peer. All rights reserved. Made with Love for students
+                </div>
+            </div>
+        </footer>
     </div>
 
-  </div>
-
-</section>
-
-
-<section class="px-10 py-20 bg-white">
-
-  <h2 class="text-4xl font-bold text-center mb-6 text-textgreen">
-    Three powerful tools, one platform
-  </h2>
-
-  <p class="text-center max-w-2xl mx-auto mb-16 text-textblue1 font-bold">
-    Community, focus and planning to revolutionize the way you study.
-  </p>
-
-  <div class="grid md:grid-cols-2 gap-10 items-center mb-20">
-
-    <div>
-      <h3 class="text-3xl font-bold text-textgreen flex items-center gap-3 text-textgreen">
-        <img src="/public/match-icon.png" class="w-10 h-10 rounded-2xl">
-        Match Making
-      </h3>
-
-      <p class="text-accent font-semibold -mt-1 mb-4 mx-12">Find Your Study Match</p>
-
-      <p class="mb-4 text-textblue1">
-        Swipe and match with students who share your study interests and goals.
-        A smart matching system to connect you with the perfect partner.
-      </p>
-
-      <ul class="text-gray-700 space-y-2">
-        <li>✨ Smart matching algorithm</li>
-        <li>📚 Filter by subjects and learning goals</li>
-        <li>💬 Instant chat with your matches</li>
-        <li>👥 Join or create study groups</li>
-      </ul>
-
-      <button class="mt-6 bg-accent text-white px-6 py-2 rounded-full hover:bg-orange-600">
-        Explore Match Making
-      </button>
-    </div>
-
-    <img src="public/matchmaking.png" class="rounded-2xl shadow-lg">
-  </div>
-
-
-  <div class="grid md:grid-cols-2 gap-10 items-center mb-20">
-
-    <img src="public/focus.png" class="rounded-2xl shadow-lg">
-
-    <div>
-      <h3 class="text-3xl font-bold text-textgreen flex items-center gap-3 text-textgreen">
-        <img src="public/FocusMode.png" class="w-10 h-10 rounded-2xl">
-        Focus Mode
-      </h3>
-
-      <p class="text-accent font-semibold -mt-1 mb-4 mx-12">Eliminate Distractions</p>
-
-      <p class="mb-4 text-textblue1">
-        Activate focus mode for distraction-free study sessions.
-        Track your time, monitor progress, and stay in the zone.
-      </p>
-
-      <ul class="text-gray-700 space-y-2">
-        <li>⏱️ Pomodoro & custom timers</li>
-        <li>🎨 Calming color themes</li>
-        <li>📊 Progress tracking & stats</li>
-        <li>🎧 Background ambient sounds</li>
-      </ul>
-
-      <button class="mt-6 bg-secondary text-white px-6 py-2 rounded-full hover:bg-blue-700">
-        Explore Mode Focus
-      </button>
-    </div>
-
-  </div>
-
-
-  <div class="grid md:grid-cols-2 gap-10 items-center">
-
-    <div>
-      <h3 class="text-3xl font-bold text-textgreen flex items-center gap-3 text-textgreen p-2 rounded-2xl">
-        <img src="public/SmartPlanner.png" class="w-10 h-10 rounded-2xl">
-        Smart Planner
-      </h3>
-
-      <p class="text-accent font-semibold -mt-1 mb-4 mx-16">AI-Powered Scheduling</p>
-
-      <p class="mb-4 text-textblue1">
-        Let AI create the perfect study schedule based on your goals,
-        deadlines, and learning patterns. Smart reminders keep you on track.
-      </p>
-
-      <ul class="text-gray-700 space-y-2">
-        <li>📅 AI-generated study plans</li>
-        <li>🔁 Adaptive scheduling</li>
-        <li>⏰ Smart deadline reminders</li>
-        <li>📈 Performance analytics</li>
-      </ul>
-
-      <button class="mt-6 bg-footer text-white px-6 py-2 rounded-full hover:bg-green-700">
-        Explore Planificateur Intelligent
-      </button>
-    </div>
-
-    <img src="public/planner.png" class="rounded-2xl shadow-lg">
-  </div>
-
-</section>
-
-
-<section class="px-10 py-20 bg-primary">
-  <h2 class="text-4xl font-bold text-center mb-6 text-textgreen">Why Esprit2Peer?</h2>
-  <p class="text-center max-w-3xl mx-auto text-textblue1 font-bold">
-    We believe that learning is better together.
-  </p>
-</section>
-
-
-<section class="px-10 py-20 bg-primary">
-  <div class="grid md:grid-cols-3 gap-10">
-
-    <div class="p-4 rounded-xl shadow bg-accent-30 h-[292px]">
-      <img src="public/Excellence.png" class="h-32 mx-auto mb-4 rounded-xl">
-      <h3 class="text-2xl font-bold mb-2 text-textgreen text-center">Excellence</h3>
-      <p class="text-textgreen text-center">
-        Empowering students to achieve their academic best through collaboration.
-      </p>
-    </div>
-
-    <div class="p-6 rounded-xl shadow bg-footer-30">
-      <img src="public/SaftyFirst.png" class="h-32 mx-auto mb-4 rounded-xl">
-      <h3 class="text-2xl font-bold mb-2 text-textgreen text-center">Safety First</h3>
-      <p class="text-textgreen text-center">
-        Verified profiles and secure platform to ensure a safe learning environment.
-      </p>
-    </div>
-
-    <div class="p-6 rounded-xl shadow bg-accent-30">
-      <img src="public/Global Community.png" class="h-32 mx-auto mb-4 rounded-xl">
-      <h3 class="text-2xl font-bold mb-2 text-textgreen text-center">Global Community</h3>
-      <p class="text-textgreen text-center">
-        Connecting students worldwide to share knowledge and grow together.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="px-10 py-20 bg-primary">
-  <h2 class="text-4xl font-bold text-center mb-6 text-textgreen">Contact Us</h2>
-  <p class="text-center max-w-3xl mx-auto text-textblue1 font-bold">Have questions? We'd love to hear from you.</p>
-</section>
-
-
-<footer class="px-10 py-10 bg-footer text-text-light">
-  <div class="flex flex-col md:flex-row justify-between">
-
-    <div>
-      <img src="public/logo1.png" class="h-16 mt-4">
-      <p class="max-w-xs text-gray-300 mb-4">
-        Connecting students worldwide to learn and grow together.
-      </p>
-    </div>
-
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Quick Links</h3>
-      <ul class="space-y-1 text-gray-300">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>How It Works</li>
-        <li>Contact</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Resources</h3>
-      <ul class="space-y-1 text-gray-300">
-        <li>Help Center</li>
-        <li>Privacy Policy</li>
-        <li>Terms of Service</li>
-        <li>FAQs</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Get in Touch</h3>
-      <p class="text-gray-300 mb-3">hello@esprit2peer.com</p>
-
-      <div class="flex gap-4">
-        <img src="public/facebook.png" class="h-6">
-        <img src="public/instagram.png" class="h-6">
-        <img src="public/twitter.png" class="h-6">
-      </div>
-    </div>
-
-  </div>
-
-  <p class="text-center text-gray-400 mt-10">
-    © 2025 Esprit2Peer. All Rights Reserved.
-  </p>
-</footer>
-
+    <!-- nouha added this - mobile menu script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
