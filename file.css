@@ -1,0 +1,256 @@
+@import "tailwindcss";
+/* Variables globales */
+:root {
+  --color-primary: #fdfbee;
+  --color-secondary: #57B4BA;
+  --color-textblue: #32B4AE;
+  --color-accent: #FE4F2D;
+  --color-accent-30: rgb(254, 79, 45, 0.3);
+  --color-card: #F7F4E8;
+  --color-darkgreen: #015551;
+  --footer-bg: #004A4A;
+  --color-light: #FFFFFF;
+  --footer-bg-30: rgba(37, 184, 184, 0.3);
+  --color-text: #000000;
+  --color-background: rgb(255, 255, 255, 0.4);
+  --color-button1-start: rgba(254, 79, 45, 0.56); /* #FE4F2D Ã  56% */
+  --color-button1-end: rgba(255, 54, 14, 1);      /* #FF360E Ã  100% */
+  --color-p-start: #32B4AE;
+  --color-p-end: #FE4F2D; 
+  --color-b-satart: #57B4BA;
+   --color-tags:rgba(229, 233, 235, 0.623);
+  --color-b-end: #10B981;
+  --color-backgroundSession: rgb(254, 79, 45, 0.61);
+  --color-backgroundSession1: rgb(0, 74, 74, 0.15);
+  
+  /* NEW VARIABLE ADDED FOR MODAL STAR COLOR */
+  --color-star-active: #FBBF24; /* Yellow for active stars */
+}
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Classes custom pour utiliser les variables */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-accent1 { color: var(--color-accent); }
+.bg-textlight { color: var(--color-light); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.bg-footer { background-color: var(--footer-bg); }
+.bg-textdark { color: var(--color-text); }
+.border-primary { border-color: var(--color-primary); }
+.bg-textblue1 { color: var(--color-textblue); }
+.bg-textgreen { color: var(--color-darkgreen); }
+.bg-accent-30 { background-color: var(--color-accent-30); }
+.bg-footer-30 { background-color: var(--footer-bg-30); }
+.bg-back-4 { background-color: var(--color-background); }
+.bg-bgCard { background-color: var(--color-card); }
+.bg-session { background-color: var(--color-backgroundSession); }
+.bg-session1 { background-color: var(--color-backgroundSession1); }
+
+.button {
+  background: linear-gradient(
+    to right,
+    var(--color-button1-start),
+    var(--color-button1-end)
+  );
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button2 {
+  background: linear-gradient(
+    to right,
+    var(--color-b-satart),
+    var(--color-b-end)
+  );
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.p {
+  background: linear-gradient(
+    to right,
+    var(--color-p-start),
+    var(--color-p-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Pour Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-hr {
+  border: none; /* Supprime la bordure par dÃ©faut */
+  height: 2px;  /* Hauteur de la ligne */
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
+  border-radius: 2px; /* Optionnel pour arrondir les bords */
+}
+
+.nav-gap-51 {
+  display: flex; 
+  gap: 51px;
+}
+
+.bggrad {
+  background: linear-gradient(
+    to right,
+    rgba(47, 182, 137, 0.863),
+    #949e868c, 
+    rgba(254, 79, 45, 0.42)   
+  );
+}
+
+/* NEW: Star rating system using your existing variables */
+.star-rating-container {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star-icon {
+  cursor: pointer;
+  color: #E5E7EB; /* Default gray color for inactive stars */
+  transition: color 0.2s ease;
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+}
+
+
+
+.star-icon.active {
+  color: var(--color-star-active); /* Yellow for active stars */
+}
+
+.star-icon:hover {
+  color: var(--color-star-active);
+}
+
+/* Hover effect for star groups */
+.star-rating-container:hover .star-icon {
+  color: var(--color-star-active);
+}
+
+.star-rating-container .star-icon:hover ~ .star-icon {
+  color: #E5E7EB;
+}
+
+/* NEW: Modal specific styles using your variables */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-lg */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+}
+
+.modal-header {
+  border-bottom-color: #E5E7EB; /* border-light */
+}
+
+.dark .modal-header {
+  border-bottom-color: #374151; /* border-dark */
+}
+
+.modal-text-secondary {
+  color: #4B5563; /* text-light-secondary */
+}
+
+.dark .modal-text-secondary {
+  color: #D1D5DB; /* text-dark-secondary */
+}
+
+.modal-textarea {
+  border-color: #E5E7EB; /* border-light */
+  background-color: white;
+}
+
+.dark .modal-textarea {
+  border-color: #374151; /* border-dark */
+  background-color: #1F2937; /* background-dark */
+}
+
+.modal-close {
+  color: #4B5563; /* text-light-secondary */
+}
+
+.modal-close:hover {
+  color: #111827; /* text-light-primary */
+}
+
+.dark .modal-close {
+  color: #D1D5DB; /* text-dark-secondary */
+}
+
+.dark .modal-close:hover {
+  color: #F9FAFB; /* text-dark-primary */
+}
+
+ .pie-chart {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: conic-gradient(#32B4AE 0% 85%, #FE4F2D 85% 90%, #57B4BA 90% 100%);
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: inherit;
+        }
+        
+        .button2 {
+            background: linear-gradient(to right, #57B4BA, #10B981);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+        
+        .button2:hover {
+            opacity: 0.9;
+        }
+        
+        .card-bg {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .container-narrow {
+                max-width: 100%;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .container-narrow {
+                max-width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container-narrow {
+                max-width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
