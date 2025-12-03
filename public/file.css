@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import './index.css';
+
 /* Variables globales */
 :root {
   --color-primary: #fdfbee;
